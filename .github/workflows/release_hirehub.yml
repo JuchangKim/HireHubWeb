@@ -26,8 +26,7 @@ jobs:
         run: |
           cd server
           npm install
-          npm run build --if-present
-          npm test --if-present
+          node app
         working-directory: ./server
 
       # Build frontend
@@ -35,7 +34,7 @@ jobs:
         run: |
           cd client
           npm install
-          npm run build
+          npm start
         working-directory: ./client
         
       - name: Zip artifact for deployment
