@@ -1,6 +1,7 @@
 
 const Company = require('../models/Company');
 
+// Handle company information
 
 exports.addCompanyInfo = async (req, res) => {
   try {
