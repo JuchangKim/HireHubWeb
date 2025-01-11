@@ -5,7 +5,7 @@ const Review = require('../models/Review');
 
 dotenv.config();
 
-const uri = 'mongodb+srv://Hirehub:1234567Wa%40%23%24@cluster0.hqn5s.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'; 
+const uri = 'mongodb+srv://brad193026:rla8230643@hirehubweb.pvnmg.mongodb.net/?retryWrites=true&w=majority&appName=HireHubWeb'; 
 mongoose.connect(uri)
   .then(() => console.log('Connected to MongoDB'))
   .catch((error) => console.error('Error connecting to MongoDB:', error));
