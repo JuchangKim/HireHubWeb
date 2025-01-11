@@ -4,7 +4,7 @@ const News = require('../models/News');
 
 dotenv.config();
 
-const uri = 'mongodb+srv://brad193026:rla8230643@hirehubweb.pvnmg.mongodb.net/?retryWrites=true&w=majority&appName=HireHubWeb'; 
+const uri = 'mongodb+srv://brad193026:KXUcGk9aMKz_3!-@hirehubweb.pvnmg.mongodb.net/?retryWrites=true&w=majority&appName=HireHubWeb'; 
 mongoose.connect(uri)
   .then(() => console.log('Connected to MongoDB'))
   .catch((error) => console.error('Error connecting to MongoDB:', error));
