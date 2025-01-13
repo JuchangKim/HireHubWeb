@@ -24,7 +24,7 @@ function EditJobPage() {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/jobs');
+                const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/jobs`);
                 setJobs(response.data);
             } catch (err) {
                 setError('Error fetching jobs');
@@ -35,7 +35,7 @@ function EditJobPage() {
         if (jobId) {
             const fetchJob = async () => {
                 try {
-                    const response = await axios.get(`http://localhost:5000/api/jobs/${jobId}`);
+                    const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/jobs/${jobId}`);
                     setFormData(response.data);
                 } catch (err) {
                     setError('Error fetching job data');
@@ -55,8 +55,8 @@ function EditJobPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const url = jobId
-            ? `http://localhost:5000/api/jobs/${jobId}` // Update job
-            : `http://localhost:5000/api/jobs`; // Create new job
+            ? `${process.env.REACT_APP_API_BASE_URL}/api/jobs/${jobId}` // Update job
+            : `${process.env.REACT_APP_API_BASE_URL}/api/jobs`; // Create new job
 
         try {
             if (jobId) {
@@ -82,7 +82,7 @@ function EditJobPage() {
     const handleDelete = async (jobId) => {
         if (window.confirm("Are you sure you want to delete this job?")) { 
             try {
-                await axios.delete(`http://localhost:5000/api/jobs/${jobId}`);
+                await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/api/jobs/${jobId}`);
                 setSuccess("Job deleted successfully.");
                 setJobs(jobs.filter(job => job._id !== jobId)); 
             } catch (err) {

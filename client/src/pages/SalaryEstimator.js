@@ -17,9 +17,9 @@ function SalaryEstimator() {
     useEffect(() => {
         const fetchOptions = async () => {
             try {
-                const rolesResponse = await axios.get('http://localhost:5000/api/salary/roles');
-                const industriesResponse = await axios.get('http://localhost:5000/api/salary/industries');
-                const locationsResponse = await axios.get('http://localhost:5000/api/salary/locations');
+                const rolesResponse = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/salary/roles`);
+                const industriesResponse = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/salary/industries`);
+                const locationsResponse = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/salary/locations`);
                 setRoles(rolesResponse.data);
                 setIndustries(industriesResponse.data);
                 setLocations(locationsResponse.data);
@@ -34,7 +34,7 @@ function SalaryEstimator() {
     const handleEstimateSalary = async () => {
         setErrorMessage(''); // Clear previous error messages
         try {
-            const response = await axios.get('http://localhost:5000/api/salary/estimate', {
+            const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/salary/estimate`, {
                 params: {
                     role: selectedRole,
                     industry: selectedIndustry,

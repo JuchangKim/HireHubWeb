@@ -37,7 +37,7 @@ const Profile = () => {
       }
 
       try {
-        const response = await axios.get("http://localhost:5000/api/profile", {
+        const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/profile`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -123,7 +123,7 @@ const Profile = () => {
 
     try {
       await axios.put(
-        "http://localhost:5000/api/profile",
+        `${process.env.REACT_APP_API_BASE_URL}/api/profile`,
         {
           ...formData,
           // JC - Adding jobPreferences data when submit.
@@ -176,7 +176,7 @@ const Profile = () => {
 
         try {
           await axios.put(
-            "http://localhost:5000/api/profile",
+            `${process.env.REACT_APP_API_BASE_URL}/api/profile`,
             { resume: resumeData, resumeFileName: file.name },
             {
               headers: {

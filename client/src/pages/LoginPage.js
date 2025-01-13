@@ -25,7 +25,7 @@ function LoginPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/login', formData);
+            const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/login`, formData);
             localStorage.setItem('token', response.data.token); // Save token to local storage
             localStorage.setItem('userType', formData.userType); // Save user type (user/company)
             setIsAuthenticated(true); // Update authentication status

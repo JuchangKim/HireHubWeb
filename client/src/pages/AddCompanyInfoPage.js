@@ -36,7 +36,7 @@ function AddCompanyInfoPage() {
 
     try {
  
-      await axios.post('http://localhost:5000/api/companies/add', company);
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/companies/add`, company);
 
 
       if (window.confirm('Company information added successfully! Click OK to refresh.')) {

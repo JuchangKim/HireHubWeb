@@ -27,7 +27,7 @@ function ManageCompanyInfo() {
         if (companyId) {
             const fetchCompany = async () => {
                 try {
-                    const response = await axios.get(`http://localhost:5000/api/companies/${companyId}`);
+                    const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/companies/${companyId}`);
                     setCompanyData(response.data);
                 } catch (err) {
                     setError('Error fetching company details');
@@ -38,7 +38,7 @@ function ManageCompanyInfo() {
 
         const fetchCompanies = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/companies');
+                const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/companies`);
                 setCompanies(response.data);
             } catch (err) {
                 setError('Error fetching companies');
@@ -55,10 +55,10 @@ function ManageCompanyInfo() {
         e.preventDefault();
         try {
             if (companyId) {
-                await axios.put(`http://localhost:5000/api/companies/${companyId}`, companyData);
+                await axios.put(`${process.env.REACT_APP_API_BASE_URL}/api/companies/${companyId}`, companyData);
                 setSuccess('Company information updated successfully!');
             } else {
-                await axios.post('http://localhost:5000/api/companies/add', companyData);
+                await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/companies/add`, companyData);
                 setSuccess('Company information added successfully!');
             }
             // Clear the form after submission
@@ -85,7 +85,7 @@ function ManageCompanyInfo() {
     const handleDelete = async (companyId) => {
         if (window.confirm("Are you sure you want to delete this company?")) {
             try {
-                await axios.delete(`http://localhost:5000/api/companies/${companyId}`);
+                await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/api/companies/${companyId}`);
                 setCompanies(companies.filter(company => company._id !== companyId));
                 setSuccess("Company deleted successfully.");
             } catch (err) {

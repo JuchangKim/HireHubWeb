@@ -19,7 +19,7 @@ const CompanyReviewPage = () => {
     // Fetch the company reviews from the server
     const fetchReviews = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/reviews');
+            const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/reviews`);
             const data = await response.json();
             setReviews(data);
         } catch (error) {
@@ -39,7 +39,7 @@ const CompanyReviewPage = () => {
         };
 
         try {
-            const response = await fetch('http://localhost:5000/api/reviews', {
+            const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/reviews`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

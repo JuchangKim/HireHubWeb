@@ -15,7 +15,7 @@ function IndustryNewsPage() {
     useEffect(() => {
         const fetchNews = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/news');
+                const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/news`);
                 
                 // Since `datePosted` is already formatted on the server side, we don't need to reformat it here
                 const sortedArticles = response.data;

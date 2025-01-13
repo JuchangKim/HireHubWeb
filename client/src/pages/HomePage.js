@@ -11,7 +11,7 @@ function HomePage() {
     // Fetch latest jobs based on search and sort options
     const fetchJobs = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/jobs', {
+            const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/jobs`, {
                 params: { keyword: searchKeyword, sort: sortOption }
             });
             setLatestJobs(response.data);

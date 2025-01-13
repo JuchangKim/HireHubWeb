@@ -27,7 +27,7 @@ function IndustryNewsDetail() {
     useEffect(() => {
         const fetchNewsArticle = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/news/${id}`);
+                const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/news/${id}`);
                 console.log('Fetched News Article:', response.data);
                 
                 // Set the news article

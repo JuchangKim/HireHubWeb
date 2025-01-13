@@ -27,7 +27,7 @@ function EditCompanyForm() {
     useEffect(() => {
         const fetchCompany = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/companies/${companyId}`);
+                const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/companies/${companyId}`);
                 setCompanyData(response.data);
             } catch (err) {
                 setError('Error fetching company details');
@@ -43,7 +43,7 @@ function EditCompanyForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5000/api/companies/${companyId}`, companyData);
+            await axios.put(`${process.env.REACT_APP_API_BASE_URL}/api/companies/${companyId}`, companyData);
             setSuccess('Company information updated successfully!');
             window.scrollTo(0, 0);
             setTimeout(() => navigate('/editcompyinfo'), 2000);

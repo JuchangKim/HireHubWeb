@@ -14,7 +14,7 @@ function EditCompyInfoPage() {
     useEffect(() => {
         const fetchCompanies = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/companies');
+                const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/companies`);
                 setCompanies(response.data);
             } catch (err) {
                 setError('Error fetching companies');
@@ -30,7 +30,7 @@ function EditCompyInfoPage() {
     const handleDelete = async (companyId) => {
         if (window.confirm("Are you sure you want to delete this company?")) {
             try {
-                await axios.delete(`http://localhost:5000/api/companies/${companyId}`);
+                await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/api/companies/${companyId}`);
                 setSuccess("Company deleted successfully.");
                 setCompanies(companies.filter(company => company._id !== companyId));
             } catch (err) {

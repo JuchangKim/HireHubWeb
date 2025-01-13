@@ -22,7 +22,7 @@ function EditJobForm() {
     useEffect(() => {
         const fetchJob = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/jobs/${jobId}`);
+                const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/jobs/${jobId}`);
                 setFormData(response.data); 
             } catch (err) {
                 setError('Error fetching job data');
@@ -43,10 +43,10 @@ function EditJobForm() {
         
 
         console.log(`Updating job with ID: ${jobId}`);
-        console.log(`PUT request URL: http://localhost:5000/api/jobs/${jobId}`);
+        console.log(`PUT request URL: ${process.env.REACT_APP_API_BASE_URL}/api/jobs/${jobId}`);
         
         try {
-            await axios.put(`http://localhost:5000/api/jobs/${jobId}`, formData); 
+            await axios.put(`${process.env.REACT_APP_API_BASE_URL}/api/jobs/${jobId}`, formData); 
             setSuccess('Job information updated successfully!');
             setTimeout(() => navigate('/editjob'), 2000); 
         } catch (err) {

@@ -85,7 +85,7 @@ function RegisterPage() {
     if (!validateForm()) return;
 
     try {
-      await axios.post("http://localhost:5000/api/register", {
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/register`, {
         userType: formData.userType, // Include userType in registration data
         firstName: formData.firstName,
         lastName: formData.lastName,

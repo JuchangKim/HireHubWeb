@@ -10,7 +10,7 @@ function JobDetailsPage() {
     useEffect(() => {
         const fetchJobDetails = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/jobs/${id}`);
+                const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/jobs/${id}`);
                 setJob(response.data);
             } catch (error) {
                 console.error('Error fetching job details:', error);

@@ -34,7 +34,7 @@ function JobListingPage() {
             const token = localStorage.getItem('token');
             if (token) {
                 try {
-                    const response = await axios.get('http://localhost:5000/api/profile', {
+                    const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/profile`, {
                         headers: { Authorization: `Bearer ${token}` },
                     });
                     // JC - Set user preferences or default values if any preference is missing
