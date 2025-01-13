@@ -19,6 +19,10 @@ const path = require('path');
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(cors());
+app.use(cors({
+    origin: 'https://https://hirehub-bbfsh4a5feexh3gt.newzealandnorth-01.azurewebsites.net',
+}));
+
 app.use(express.json());
 
 // Define routes here
