@@ -48,7 +48,7 @@ function IndustryNewsDetail() {
         const fetchUserProfile = async () => {
             try {
                 const token = localStorage.getItem('token'); // Get token from localStorage
-                const response = await axios.get('http://localhost:5000/api/profile', {
+                const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/profile`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 setUsername(response.data.username); // Set the username from the user's profile
