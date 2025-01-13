@@ -21,10 +21,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors());
 app.use(express.json());
 
-// Catch-all route for serving the frontend index.html
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+
 
 // Define routes here
 app.use('/api', jobRoutes);
@@ -33,6 +30,11 @@ app.use('/api', reviewRoutes);
 app.use('/api/salary', salaryRoutes);
 app.use('/api/companies', companyRoutes);
 app.use('/api', newsRoutes); 
+
+// Catch-all route for serving the frontend index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
