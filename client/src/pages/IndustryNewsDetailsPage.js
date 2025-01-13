@@ -74,7 +74,7 @@ function IndustryNewsDetail() {
 
         try {
             // Post the new comment to the server
-            const response = await axios.post(`http://localhost:5000/api/news/${id}/comments`, newComment);
+            const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/news/${id}/comments`, newComment);
 
             // Format the updated comments list
             const formattedComments = response.data.comments.map(comment => ({
