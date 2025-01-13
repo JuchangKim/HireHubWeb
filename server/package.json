@@ -12,5 +12,9 @@
     "nodemailer": "^6.9.14",
     "npm": "^10.9.0",
     "path": "^0.12.7"
-  }
+  },
+  "scripts": {
+    "start": "node app.js"
+}
+
 }
