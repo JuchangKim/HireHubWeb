@@ -13,8 +13,22 @@ const newsRoutes = require('./routes/newsRoutes');
 connectDB();
 
 const app = express();
+const path = require('path');
+
+app.get('/', (req, res) => {
+    res.send('Welcome to the HireHub API!');
+  });
+
+// Serve static files from the frontend
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+
 app.use(cors());
 app.use(express.json());
+
+// Catch-all route for serving the frontend index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
+  });
 
 // Define routes here
 app.use('/api', jobRoutes);
