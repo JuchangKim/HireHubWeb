@@ -78,7 +78,7 @@ function JobListingPage() {
                 filterParams.payRange = userPreferences.salary;
             }
 
-                const response = await axios.get('http://localhost:5000/api/jobs', {
+                const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/jobs`, {
                     params: filterParams
                 });
                 setJobs(response.data);
