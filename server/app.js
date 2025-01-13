@@ -21,8 +21,6 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors());
 app.use(express.json());
 
-
-
 // Define routes here
 app.use('/api', jobRoutes);
 app.use('/api', userRoutes); 
