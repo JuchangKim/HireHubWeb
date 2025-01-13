@@ -9,14 +9,20 @@ function HomePage() {
     const [sortOption, setSortOption] = useState('date'); // Default sort by date
 
     // Fetch latest jobs based on search and sort options
+    useEffect(() => {
+        fetchJobs();
+    }, [sortOption]);
+    
     const fetchJobs = async () => {
         try {
             const response = await axios.get('http://localhost:5000/api/jobs', {
                 params: { keyword: searchKeyword, sort: sortOption }
             });
-            setLatestJobs(response.data);
+            console.log(response.data);
+            setLatestJobs(Array.isArray(response.data) ? response.data : []);
         } catch (error) {
             console.error('Error fetching jobs:', error);
+            setLatestJobs([]);
         }
     };
 

@@ -13,19 +13,18 @@ const newsRoutes = require('./routes/newsRoutes');
 connectDB();
 
 const app = express();
-// const path = require('path');
+const path = require('path');
 
-// // Serve static files from the frontend
-// app.use(express.static(path.join(__dirname, '..', 'client', 'src')));
-
+// Serve the React app's build folder
+app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(cors());
 app.use(express.json());
 
-// // Catch-all route for serving the frontend index.html
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '..', 'client/src', 'App.js'));
-//   });
+// Catch-all route for serving the frontend index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 // Define routes here
 app.use('/api', jobRoutes);
