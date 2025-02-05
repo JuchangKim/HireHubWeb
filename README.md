@@ -13,12 +13,15 @@ HireHub is the best place to find a job and grow your career. HireHub is committ
 | Recent version of [Node.js](https://nodejs.org/en/) | ![Node.js Icon](https://img.icons8.com/?size=40&id=54087&format=png&color=000000) |
 | Recent version of React using npm  | ![React Icon](https://img.icons8.com/?size=40&id=123603&format=png&color=000000) |
 
+### Live Demo
+https://hirehub-bbfsh4a5feexh3gt.newzealandnorth-01.azurewebsites.net/
+
 ### Installation
 
 #### Windows
 1. Clone the repo
 ```
-https://github.com/JuchangKim/HireHub.git
+https://github.com/JuchangKim/HireHubWeb.git
 ```
 2. Open a terminal window and cd to `Hirehub/server`
 3. Open another terminal window and cd to `Hirehub/client`
@@ -26,15 +29,20 @@ https://github.com/JuchangKim/HireHub.git
 ```
 npm install
 ```
+
+```
+5. In the `Hirehub/client` directory 
+```
+npm run build
+```
+
+6. Move the build folder from HireHub/client to HireHub/server
+
 5. In the `Hirehub/server` directory 
 ```
 node .\app.js
 ```
-6. In the `Hirehub/client` directory 
-```
-npm start
-```
-7. Enter ` http://localhost:3000` in your favorite browser (Chrome is recommended) or your `http://your IP address:3000` on your network
+7. Enter `https://hirehub-bbfsh4a5feexh3gt.newzealandnorth-01.azurewebsites.net/` in your favorite browser (Chrome is recommended)
 
 8. Enjoy
 
