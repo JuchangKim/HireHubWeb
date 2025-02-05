@@ -12,13 +12,11 @@ HireHub is the best place to find a job and grow your career. HireHub is committ
 5. [Usage](#usage)
 6. [Technologies Used](#technologies-used)
 7. [Authors](#authors)
-8. [Contributing](#contributing)
-9. [License](#license)
 
 ---
 
 ## Features
-- Posting and editing job postings via CRUD functionalities (RESt API)
+- Posting and editing job postings via CRUD functionalities (REST API)
 - Secure user authentication with JWT
 - Real-time search filters with useState
 - Mobile-responsive design
@@ -31,7 +29,7 @@ HireHub is the best place to find a job and grow your career. HireHub is committ
 ## Demo
 [Live Demo Link](https://hirehub-bbfsh4a5feexh3gt.newzealandnorth-01.azurewebsites.net/)
 
-*(Consider adding screenshots or GIFs here)*
+![image](https://github.com/user-attachments/assets/46b8d504-a153-4ad8-8ac7-c7d86e13f67c)
 
 ---
 
