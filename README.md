@@ -9,9 +9,8 @@ HireHub is the best place to find a job and grow your career. HireHub is committ
 2. [Demo](#demo)
 3. [Dependencies](#dependencies)
 4. [Installation](#installation)
-5. [Usage](#usage)
-6. [Technologies Used](#technologies-used)
-7. [Authors](#authors)
+5. [Technologies Used](#technologies-used)
+6. [Authors](#authors)
 
 ---
 
@@ -94,4 +93,4 @@ HireHub is the best place to find a job and grow your career. HireHub is committ
 | Abdulmalik Alnasra | [GitHub](https://github.com/Abdul-was-here) ![GitHub Icon](https://img.icons8.com/?size=25&id=16318&format=png&color=000000) |
 | Akshay Silswal     | [GitHub](https://github.com/AkkiSilswal) ![GitHub Icon](https://img.icons8.com/?size=25&id=16318&format=png&color=000000) |
 | David Li           | [GitHub](https://github.com/ljld12315) ![GitHub Icon](https://img.icons8.com/?size=25&id=16318&format=png&color=000000) |
-| Jc Kim             | [GitHub](https://github.com/JuchangKim) ![GitHub Icon](https://img.icons8.com/?size=25&id=16318&format=png&color=000000) |
+| Juchang (JC) Kim   | [GitHub](https://github.com/JuchangKim) ![GitHub Icon](https://img.icons8.com/?size=25&id=16318&format=png&color=000000) |
