@@ -50,6 +50,9 @@ HireHub is the best place to find a job and grow your career. HireHub is committ
    ```bash
    git clone https://github.com/JuchangKim/HireHubWeb.git
 
+2. **Modify Web Address**
+   - REACT_APP_API_BASE_URL value in client/.env needed be modified as you want to host on web.
+   - Otherwise it can be conflict with current web hosting.
 2. **Navigate to the server folder**
    ```bash
    cd Hirehub/server
@@ -74,6 +77,10 @@ HireHub is the best place to find a job and grow your career. HireHub is committ
    node app.js
 
 8. **Open the App**
+   - Enter your host address for this project in your browser. Chrome is recommended.
+
+### If you want to access the web without modifying host address.
+   **Open the App**
    - Enter https://hirehub-bbfsh4a5feexh3gt.newzealandnorth-01.azurewebsites.net/ in your browser. Chrome is recommended.
 
 ---
